@@ -1,0 +1,39 @@
+<div mat-dialog-title>
+    <h1>Objectif Form</h1>
+</div>
+<form [formGroup]="objectifForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Titre</mat-label>
+                <input matInput type="text" placeholder="Ex. Project X" formControlName="description">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Date limite</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="date_limite">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="objectifForm.get('date_limite')?.invalid && objectifForm.get('date_limite')?.touched">
+                    La date limite doit être aujourd'hui ou ultérieure.
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Equipe</mat-label>
+                <mat-select formControlName="equipeId" (selectionChange)="onSelectEquipe($event.value)">
+                    <mat-option *ngFor="let team of teams" [value]="team._id">
+                        {{team.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="primary" type="submit" (click)="refresh()">
+            {{ data ? 'Modifier' : 'Ajouter' }}
+        </button>
+    </div>
+</form>

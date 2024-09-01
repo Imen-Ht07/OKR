@@ -1,0 +1,40 @@
+/* Style pour la liste des objectifs */
+.goal-list {
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  flex: 1; /* Pour que la liste des objectifs occupe une partie de l'espace disponible */
+  margin-right: 20px; /* Marge à droite pour espacement */
+}
+
+.goal-list h3 {
+  margin-top: 0;
+}
+
+.goal-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.goal-list li {
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  background-color: #fff;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.goal-list li:hover {
+  background-color: #e0e0e0;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start; 
+}
+
+.calendar-container {
+  flex: 1; 
+}

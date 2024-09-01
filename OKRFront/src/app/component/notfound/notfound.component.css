@@ -1,0 +1,61 @@
+/* Base styling for the body to reset margin and ensure full height */
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Arial', sans-serif; /* Using Arial as fallback font */
+    background-color: #f8f9fa; /* Light gray background */
+}
+
+/* Styling for the container to ensure it fills the viewport */
+.container-fluid {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Background color and rounded corners for the error message area */
+.bg-secondary {
+    background-color: #6c757d; /* A darker shade for the background */
+    color: #ffffff; /* White text color for better contrast */
+    border-radius: 0.5rem; /* Rounded corners */
+}
+
+/* Padding adjustments for the column containing the error message */
+.col-md-6 {
+    padding: 2rem; /* More padding for better spacing */
+}
+
+/* Stylistic choices for the icons */
+.bi {
+    color: #391f98; /* Bootstrap primary color for the icon */
+}
+
+/* Font and weight adjustments for the main 404 display */
+.display-1 {
+    font-size: 4rem; /* Larger font size for emphasis */
+    font-weight: 700; /* Bold font weight */
+}
+
+/* Styling for additional messages below the main 404 error */
+h1, p {
+    color: #dee2e6; /* Slightly lighter text for less emphasis compared to the main 404 text */
+}
+
+/* Styling for the call to action button */
+.btn-primary {
+    background-color: #391f98; /* Primary button color */
+    border: none; /* No border for a cleaner look */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.btn-primary:hover {
+    background-color:#391f98; /* Slightly darker shade on hover for feedback */
+}
+
+/* Ensure full-width buttons and input on small devices */
+@media (max-width: 576px) {
+    .btn {
+        width: 100%;
+    }
+}

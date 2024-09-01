@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PFE</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="">
+    <meta name="author" content="Phoenixcoded" />
+    <!-- Favicon icon -->
+
+    
+    <link rel="icon" href="/assets/admin/images/favicon.ico" type="image/x-icon">
+    <!-- vendor css -->
+    <link rel="stylesheet" href="/assets/admin/css/style.css">
+</head>
+<body style=" background: linear-gradient(80deg, #391f98 3%, #526274 100%);" >
+		<!-- [ navigation menu ] start -->
+    <nav class="pcoded-navbar" style=" height: 125%;  background:linear-gradient(80deg, #391f98 3%, #526274 100%)">	
+      <div class="navbar-wrapper  ">
+      <div class="navbar-content scroll-div " >
+          <div >
+              <div class="main-menu-header">
+                  <img class="img-radius" src="../../../../assets/logo.png" alt="User-Profile-Image">
+                  <div class="user-details">
+                      <div id="more-details" class="text-white"> IAJT <i class="fa fa-caret-down"></i>
+                      </div>
+                  </div>
+              </div>
+          </div>
+<br><br>
+          <ul class="nav pcoded-inner-navbar contain "id="tit1">
+              <li class="nav-item">
+                  <a href="/home" class="nav-link ">
+                <span class="pcoded-mtext mx-2">Tableau de bord</span></a>
+              </li>
+              
+         <li class="nav-item pcoded-hasmenu">
+            <a href="/manager" class="nav-link ">
+               <span class="pcoded-mtext mx-2"> Managers</span></a>
+        </li>
+        <li class="nav-item pcoded-hasmenu">
+          <a href="/employe" class="nav-link ">
+             <span class="pcoded-mtext mx-2"> Employés</span></a>
+             </li>
+             <li class="nav-item pcoded-hasmenu">
+              <a href="/team" class="nav-link ">
+                 <span class="pcoded-mtext mx-2"> Equipes</span></a>
+             </li>
+  <li class="nav-item pcoded-hasmenu">
+      <a href="/objectif" class="nav-link ">
+         <span class="pcoded-mtext mx-2"> Objectifs</span></a>
+  </li>
+  <li class="nav-item pcoded-hasmenu">
+    <a href="/allresultat" class="nav-link ">
+       <span class="pcoded-mtext mx-2"> Resultats Clé</span></a>
+</li>
+  <li class="nav-item pcoded-hasmenu">
+      <a href="/calender" class="nav-link ">
+         <span class="pcoded-mtext mx-2"> Calendrier </span></a>
+  </li>	
+</ul>
+      </div>
+  </div>
+</nav>
+<!-- [ navigation menu ] end -->
+	<!-- [ Header ] start -->
+	<header class="navbar pcoded-header navbar-expand-lg navbar-light header-blue">
+		<div class="m-header">
+					<a class="mobile-menu" id="mobile-collapse" href="/home"><span></span></a>
+					<a href="#!" class="b-brand">
+					</a>
+					<a href="#!" class="mob-toggler" >
+						<i class="feather icon-more-vertical"></i>
+					</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="navbar-nav mr-auto">
+                        
+						<li class="nav-item" id="logout">
+							<a href="#!" class="pop-search"><i class="feather icon-search"></i></a>
+							<div class="search-bar">
+								<input type="text" id="m-search" class="form-control"  
+                                placeholder="Rechercher...">
+								<button type="button" class="close" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+						</li>
+					</ul>
+					<ul class="navbar-nav ml-auto">
+                      
+						<li>
+							<div class="dropdown" id="logout">
+                                    <!--********Ajoutez les routes nessaire *******************-->
+								<a class="dropdown-toggle mr-5" href="#" data-toggle="dropdown"></a>
+								<div class="dropdown-menu dropdown-menu-right notification">
+									<div class="noti-head" >
+										<h6 class="d-inline-block m-b-0"></h6>
+									</div>
+								</div>
+						<li>
+							<div class="dropdown drp-user">
+								<a routerLink="/" (click)="logOut()" id="logout"
+                                     class="dropdown-toggle" data-toggle="dropdown">
+									<i class="feather icon-log-out"></i>
+								</a>
+							</div>
+						</li>
+				</div>
+
+                </li>
+                </ul>
+                </div>
+			
+	</header>
+	<!-- [ Header ] end -->
+<!-- [ Main Content ] start -->
+<div class="pcoded-main-container">
+    <div class="pcoded-content">
+        <!-- [ breadcrumb ] start -->
+        <div class="page-header container">
+            <div class="page-block ">
+                <div class="row align-items-center">
+                    <div class="col-md-16">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10" id="tit">Tableau de bord</h5>
+                        </div>
+                        <ul class="breadcrumb" id="tit">
+                            <li class="breadcrumb-item"><a href="/home"><i class="feather icon-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="/home">Tableau de bord</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="example-container mb-5" style="padding: 100px;">
+        <!-- [ breadcrumb ] end -->
+<!--********************************************************************************************************************-->
+<mat-toolbar>
+    <span>Managers</span>
+    <span class="example-spacer"></span>
+    <button mat-raised-button (click)="openAddManagerDialog()">
+      Ajouter un Manager
+    </button>
+  </mat-toolbar>
+  
+  <div class="main-body">
+  
+    <mat-form-field>
+      <mat-label>Filtre</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Nom, Prénom, Email" #input>
+    </mat-form-field>
+  
+    <div class="table-container">
+      <table mat-table [dataSource]="dataSource" matSort>
+  
+        <!-- Nom Column -->
+        <ng-container matColumnDef="nom">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Nom </th>
+          <td mat-cell *matCellDef="let row"> {{row.nom}}</td>
+        </ng-container>
+  
+        <!-- Prénom Column -->
+        <ng-container matColumnDef="prenom">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Prénom </th>
+          <td mat-cell *matCellDef="let row"> {{row.prenom}}</td>
+        </ng-container>
+    <!-- Cin Column -->
+    <ng-container matColumnDef="cin">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Numéro de CIN </th>
+      <td mat-cell *matCellDef="let row"> {{row.cin}}</td>
+    </ng-container>
+        <!-- Téléphone Column -->
+        <ng-container matColumnDef="tel">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Téléphone </th>
+          <td mat-cell *matCellDef="let row"> {{row.tel}}</td>
+        </ng-container>
+  
+        <!-- Email Column -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+          <td mat-cell *matCellDef="let row"> {{row.email}}</td>
+        </ng-container>
+  
+        <!-- Département Column -->
+        <ng-container matColumnDef="departement">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Département </th>
+          <td mat-cell *matCellDef="let row"> {{row.departement}}</td>
+        </ng-container>
+  
+        <!-- Actions Column -->
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef> Actions </th>
+          <td mat-cell *matCellDef="let row">
+            <button mat-icon-button color="warn" (click)="deleteManager(row._id, row.nom)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+        <!-- Row shown when there is no matching data. -->
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="7">Aucune donnée ne correspond au filtre "{{input.value}}"</td>
+        </tr>
+      </table>
+  
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Sélectionner une page d'employés"></mat-paginator>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </body></html>

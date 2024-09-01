@@ -1,0 +1,34 @@
+/* change-pass.component.css */
+.password-form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .password-form .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .password-form label {
+    font-weight: bold;
+  }
+  
+  .password-form input[type="password"] {
+    width: 100%;
+  }
+  
+  .alert-danger {
+    margin-top: 15px;
+  }
+  
+button{
+    color: #fff; /* White text for the login button */
+    background-color: #391f98; /* Danger color for the login button */
+    border: none; /* No border for the login button */
+    border-radius: 5px; /* Slightly rounded borders for the login button */
+    padding: 12px 0; /* Padding for the login button */
+    font-size: 1rem; /* Font size for the login button */
+    cursor: pointer; /* Cursor pointer for button interaction */
+    display: block; /* Makes the button block level */
+    width: 100%; /* Full width for the login button */
+  }
+  

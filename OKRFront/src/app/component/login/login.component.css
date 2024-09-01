@@ -1,0 +1,120 @@
+/* Reset margin and padding to ensure consistency across browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling for the body to set font and background */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Clean, professional font */
+    background-color: #e9ecef; /* Neutral gray background to reduce strain */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Main container styling for centered content */
+.container-fluid {
+    width: 100%; /* Full width */
+    max-width: 360px; /* Max width for the form */
+    padding: 20px; /* Padding for spacing around */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    background: #fff; /* White background for clarity */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Enhances the visual grouping of form elements */
+.bg-secondary {
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+/* Logo styling */
+.bg-secondary img {
+    max-width: 100px; /* Adjust the logo size as needed */
+}
+
+/* Login container styling */
+.login-container {
+    text-align: center; /* Center align the login container */
+}
+
+/* Login box styling */
+.login-box {
+    padding: 1rem; /* Padding for spacing inside the login box */
+}
+
+/* Login title styling */
+.login-title {
+    font-size: 1.5rem; /* Larger font size for the login title */
+    margin-bottom: 1rem; /* Spacing at the bottom of the login title */
+}
+
+/* Login form styling */
+.login-form {
+    text-align: left; /* Left align the form elements */
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 1rem; /* Spacing between form groups */
+}
+
+/* Label styling */
+label {
+    font-size: 0.875rem; /* Font size for labels */
+}
+
+/* Form control styling */
+input[type="text"],
+input[type="password"] {
+    width: 100%; /* Full width for the form controls */
+    padding: 10px; /* Padding for the form controls */
+    font-size: 1rem; /* Font size for the form controls */
+    border: 1px solid #ced4da; /* Solid border with a light grey color */
+    border-radius: 5px; /* Slightly rounded borders for the form controls */
+}
+
+/* Form control focus styling */
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #391f98; /* Danger color on focus */
+    box-shadow: 0 0 5px rgba(220, 53, 69, 0.5); /* Soft outer glow */
+}
+
+/* Error message styling */
+.error-message {
+    color: #901818; /* Danger color for error messages */
+    font-size: 0.875rem; /* Font size for error messages */
+    margin-top: 0.25rem; /* Margin at the top of the error message */
+}
+
+/* Login button styling */
+.login-button {
+    color: #fff; /* White text for the login button */
+    background-color: #391f98; /* Danger color for the login button */
+    border: none; /* No border for the login button */
+    border-radius: 5px; /* Slightly rounded borders for the login button */
+    padding: 12px 0; /* Padding for the login button */
+    font-size: 1rem; /* Font size for the login button */
+    cursor: pointer; /* Cursor pointer for button interaction */
+    display: block; /* Makes the button block level */
+    width: 100%; /* Full width for the login button */
+}
+
+.login-button:hover {
+    background-color: #218cbd; /* A slightly darker shade on hover */
+}
+
+/* Link styling with danger color for consistency */
+a {
+    color: #391f98;
+    text-decoration: none; /* No underline */
+    transition: color 0.2s; /* Color change on hover */
+}
+
+a:hover {
+    color: #218cbd; /* Darker shade for interaction */
+}

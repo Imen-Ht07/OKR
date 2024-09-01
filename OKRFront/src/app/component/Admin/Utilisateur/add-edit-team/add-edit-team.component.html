@@ -1,0 +1,37 @@
+<div mat-dialog-title>
+    <h1> Équipe Form</h1>
+</div>
+<form [formGroup]="teamForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Nom de l'équipe</mat-label>
+                <input matInput type="text" placeholder="Nom de l'équipe" formControlName="name">
+            </mat-form-field>
+        </div>
+<!-- Manager Field -->
+<mat-form-field appearance="outline">
+    <mat-label>Manager</mat-label>
+    <mat-select formControlName="managerId" (selectionChange)="onSelectManager($event.value)">
+        <mat-option *ngFor="let manager of managers" [value]="manager._id">
+            {{ manager.nom }} {{ manager.prenom }}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+
+<!-- Employés Field -->
+<mat-form-field appearance="outline">
+    <mat-label>Employés</mat-label>
+    <mat-select formControlName="employeeIds" multiple (selectionChange)="onSelectEmployee($event.value)">
+        <mat-option *ngFor="let employe of employees" [value]="employe._id">
+            {{ employe.nom }} {{ employe.prenom }}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+    <div mat-dialog-actions class="action">
+        <button mat-button [mat-dialog-close]="false">Annuler</button>
+        <button mat-button color="primary" type="submit">{{ data ? 'Mettre à jour' : 'Ajouter' }}</button>
+    </div>
+    </div>
+</form>
+

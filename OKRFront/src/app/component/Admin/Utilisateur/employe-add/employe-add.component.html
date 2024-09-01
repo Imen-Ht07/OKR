@@ -1,0 +1,57 @@
+<div mat-dialog-title>
+    <h1>Formulaire Employé</h1>
+</div>
+<form [formGroup]="employeeForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Nom</mat-label>
+                <input matInput type="text" placeholder="Nom" formControlName="nom">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Prénom</mat-label>
+                <input matInput type="text" placeholder="Prénom" formControlName="prenom">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Numéro de CIN </mat-label>
+                <input matInput type="text" placeholder="Num de CIN " formControlName="cin">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Téléphone</mat-label>
+                <input matInput type="text" placeholder="Téléphone" formControlName="tel">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Email professionnel</mat-label>
+                <input matInput type="email" placeholder="Email" formControlName="email">
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Date d'embauche</mat-label>
+                <input matInput [matDatepicker]="picker" placeholder="Date d'embauche" formControlName="dateEmbauche">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Département</mat-label>
+                <mat-select formControlName="departement">
+                    <mat-option *ngFor="let val of departement" [value]="val">{{val}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Mot de passe</mat-label>
+                <input matInput type="password" placeholder="Mot de passe" formControlName="password">
+            </mat-form-field>
+        </div>
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Annuler</button>
+        <button mat-raised-button color="primary" type="submit">{{'Ajouter'}}</button>
+    </div>
+</form>

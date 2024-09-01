@@ -1,0 +1,43 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .main-body {
+    padding-top: 20px;
+    margin: 0 auto;
+    max-width: 1348px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  
+  .action {
+    display: flex;
+    gap: 5px;
+  }
+    mat-toolbar{
+    background-color: #391f98;
+  } 
+
+.red {
+  color: red;
+  font-size: large;
+}
+
+.orange {
+  color: orange;
+   font-size: large;
+
+}
+
+.light-green {
+  color: lightgreen;
+   font-size: large;
+}
+
+.dark-green {
+  color: darkgreen;
+   font-size: large;
+}
+
